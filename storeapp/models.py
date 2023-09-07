@@ -9,7 +9,7 @@ class Client(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.name} - {self.phone}'
+        return f'{self.name} - {self.phone}<br>'
 
 
 class Product(models.Model):
@@ -20,7 +20,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.name} - {self.price}'
+        return f'{self.name} - {self.price}<br>'
 
 
 class Order(models.Model):
@@ -30,4 +30,4 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.client} - {self.product} - {self.total_amount}'
+        return f'{self.client} - {self.product} - {self.total_amount}<br>'

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from storeapp.models import Client, Product, Order
+
 STORE = """
 <!DOCTYPE html>
 <html lang="en">
@@ -33,12 +35,15 @@ def store(request):
 
 
 def client(request):
-    return HttpResponse('Clients')
+    clients = Client.objects.all()
+    return HttpResponse(clients)
 
 
 def product(request):
-    return HttpResponse('Goods')
+    goods = Product.objects.all()
+    return HttpResponse(goods)
 
 
 def order(request):
-    return HttpResponse('Orders')
+    orders = Order.objects.all()
+    return HttpResponse(orders)
