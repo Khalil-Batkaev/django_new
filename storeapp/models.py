@@ -8,6 +8,9 @@ class Client(models.Model):
     address = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.name} - {self.phone}'
+
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
@@ -16,9 +19,15 @@ class Product(models.Model):
     qty = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.name} - {self.price}'
+
 
 class Order(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     product = models.ManyToManyField(Product)
     total_amount = models.DecimalField(max_digits=12, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.client} - {self.product} - {self.total_amount}'
