@@ -16,6 +16,7 @@ INDEX = """
   </head>
   <body>
     <a href="#">Главная</a>
+    <a href="store/">Магазин</a>
     <a href="about/">О нас</a>
     <h1>Главная страница</h1>
     <p>
