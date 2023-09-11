@@ -10,14 +10,14 @@ def store(request):
 
 def client(request):
     clients = Client.objects.all()
-    return HttpResponse(clients)
+    return render(request, 'storeapp/clients.html', {'title': 'Все клиенты', 'clients': clients})
 
 
 def product(request):
     goods = Product.objects.all()
-    return HttpResponse(goods)
+    return render(request, 'storeapp/goods.html', {'title': 'Все продукты', 'goods': goods})
 
 
 def order(request):
     orders = Order.objects.all()
-    return HttpResponse(orders)
+    return render(request, 'storeapp/orders.html', {'title': 'Все заказы', 'orders': orders})
