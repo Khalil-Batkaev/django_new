@@ -28,6 +28,7 @@ class Order(models.Model):
     product = models.ManyToManyField(Product)
     total_amount = models.DecimalField(max_digits=12, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True)
+    # created_at = models.DateTimeField()
 
 
     def __str__(self):
