@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} No Title {% endblock %}</title>
+</head>
+<nav>
+    <ul>
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'about' %}">О нас</a></li>
+        <li><a href="{% url 'store' %}">Магазин</a></li>
+    </ul>
+</nav>
+<body>
+{% block content %}
+No Content
+{% endblock %}
+</body>
+<footer>
+    <h2>Подвал</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic laudantium deserunt ea natus. Excepturi commodi
+        ipsum, deserunt soluta odit facere deleniti sint? Ad exercitationem, inventore maxime aliquid minima dolore
+        culpa
+        quas amet repellat perspiciatis unde odio officia quo, distinctio numquam minus doloremque fugiat libero, harum
+        tempore ullam? Hic, ab libero.
+    </p>
+</footer>
+</html>

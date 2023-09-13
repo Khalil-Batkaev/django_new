@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit odit in rerum aperiam illum, soluta sit repellat
+    accusamus officia ea unde? Aliquid dicta soluta vel accusamus impedit, fuga officiis perspiciatis?
+</p>
+<h2>Выбирайте</h2>
+<p>
+<ul>
+    <li><a href="{% url 'goods' %}">Товары</a></li>
+    <li><a href="{% url 'order' %}">Заказы</a></li>
+    <li><a href="{% url 'client' %}">Клиенты</a></li>
+    <li><a href="{% url 'client_orders' 4 %}">Заказы клиента 4</a></li>
+    <li><a href="{% url 'client_orders_period' 4 'week' %}">Заказы клиента 4 за неделю</a></li>
+    <li><a href="{% url 'client_orders_period' 4 'month' %}">Заказы клиента 4 за месяц</a></li>
+    <li><a href="{% url 'client_orders_period' 4 'year' %}">Заказы клиента 4 за год</a></li>
+</ul>
+</p>
+{% endblock %}}
