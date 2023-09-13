@@ -2,12 +2,14 @@ import datetime
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import DetailView, UpdateView
 
+from storeapp import forms
 from storeapp.models import Client, Product, Order
 
 
 def store(request):
-    return render(request, 'storeapp/store.html', {'title': 'Наш магазин'})
+    return render(request, 'storeapp/store.html', {'title': 'Наш магазин', 'client_id': 4, 'product_id': 2})
 
 
 def client(request):
@@ -43,3 +45,15 @@ def orders_of_client(request, client_id, period=None):
 def goods_of_client(request, order_id):
     goods = Order.objects.filter(pk=order_id).first().product.all()
     return render(request, 'storeapp/order_detail.html', {'title': 'Товары клиента', 'goods': goods})
+
+
+class ProductDetail(DetailView):
+    model = Product
+    template_name = 'storeapp/product_detail.html'
+
+
+class UpdateProduct(UpdateView):
+    model = Product
+    template_name = 'storeapp/update_product.html'
+    form_class = forms.UpdateProductForm
+
