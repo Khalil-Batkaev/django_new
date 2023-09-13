@@ -2,7 +2,7 @@ import datetime
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import DetailView, UpdateView
+from django.views.generic import DetailView, UpdateView, CreateView
 
 from storeapp import forms
 from storeapp.models import Client, Product, Order
@@ -50,6 +50,12 @@ def goods_of_client(request, order_id):
 class ProductDetail(DetailView):
     model = Product
     template_name = 'storeapp/product_detail.html'
+
+
+class CreateProduct(CreateView):
+    model = Product
+    template_name = 'storeapp/create_product.html'
+    form_class = forms.CreateProductForm
 
 
 class UpdateProduct(UpdateView):
