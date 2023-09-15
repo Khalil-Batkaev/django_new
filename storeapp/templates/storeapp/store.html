@@ -14,10 +14,12 @@
     <li><a href="{% url 'goods' %}">Товары</a></li>
     <li><a href="{% url 'order' %}">Заказы</a></li>
     <li><a href="{% url 'client' %}">Клиенты</a></li>
-    <li><a href="{% url 'client_orders' 4 %}">Заказы клиента 4</a></li>
-    <li><a href="{% url 'client_orders_period' 4 'week' %}">Заказы клиента 4 за неделю</a></li>
-    <li><a href="{% url 'client_orders_period' 4 'month' %}">Заказы клиента 4 за месяц</a></li>
-    <li><a href="{% url 'client_orders_period' 4 'year' %}">Заказы клиента 4 за год</a></li>
+    <li><a href="{% url 'client_orders' client_id %}">Заказы клиента {{ client_id }}</a></li>
+    <li><a href="{% url 'client_orders_period' client_id 'week' %}">Заказы клиента {{ client_id }} за неделю</a></li>
+    <li><a href="{% url 'client_orders_period' client_id 'month' %}">Заказы клиента {{ client_id }} за месяц</a></li>
+    <li><a href="{% url 'client_orders_period' client_id 'year' %}">Заказы клиента {{ client_id }} за год</a></li>
+    <li><a href="{% url 'create_product' %}">Добавить товар</a></li>
+    <li><a href="{% url 'update_product' product_id %}">Обновить товар {{ product_id }}</a></li>
 </ul>
 </p>
 {% endblock %}}

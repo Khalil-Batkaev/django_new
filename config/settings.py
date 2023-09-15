@@ -26,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-
 ]
 
 # Application definition
@@ -53,6 +52,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 TEMPLATES = [
     {
